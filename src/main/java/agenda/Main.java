@@ -10,6 +10,7 @@ comienzo de la rama
 
 package agenda;
 
+import static agenda.Agenda.ListaAgenda;
 import exceptions.ContactoRepetidoException;
 import java.util.ArrayList;
 
@@ -39,7 +40,7 @@ public class Main {
             }
         System.out.println("-- Listando los contactos añadidos ---");
            System.out.println(Lista.getContactos().toString());
-           //ListaAgenda(Lista);
+          ListaAgenda(Lista);
         System.out.println("-- Eliminando contacto con email_1 ...");
             Lista.eliminarContacto("email_1");
         System.out.println("-- Buscando contacto2  ..."); 
