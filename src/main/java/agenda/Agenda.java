@@ -15,6 +15,10 @@ public class Agenda {
     private HashMap<String, Contacto> contactos = new HashMap();
     private static int n = 0;
     private static int count = 0;
+
+    Agenda() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
  /**
   * Añade un contacto a la agenda
   * @param contacto contacto que tenemos que añadir
@@ -68,6 +72,36 @@ public class Agenda {
         ArrayList<Contacto> contactosList = new ArrayList<>();
         contactosList.addAll(contactos.values());
         return contactosList;
+    }
+    public static void ListaAgenda(Agenda a){
+    
+        ArrayList<Contacto> Listado = new ArrayList<>();
+        Listado = a.getContactos();
+        System.out.print("AGENDA: ");
+        System.out.print(a.getnombreAgenda(a));
+        System.out.println("\t\tNum.Contactos:"+Listado.size());
+        System.out.format("%-24s%-15s%-15s\n", "eMail","Teléfono","Nombre");
+        System.out.println("-----------------------------------------------------");
+        for (Contacto c : Listado){
+            System.out.format("%-24s%-15s%-15s\n",c.getEmail(),c.getTelefono(),c.getNombre());
+        }
+        System.out.println("-----------------------------------------------------");
+    }
+    private static String nombreAgenda="";
+
+    public String getnombreAgenda(Agenda a){
+            return this.nombreAgenda;
+    }
+    public void setnombreAgenda(String name){
+            this.nombreAgenda=name;
+    }
+
+    public Agenda(String name){
+    
+        if (name != ""){
+            this.nombreAgenda = name;
+        }
+        else this.nombreAgenda ="Untitled";
     }
     
     
